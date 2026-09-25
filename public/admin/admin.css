@@ -1,0 +1,110 @@
+/* Estilos do painel de administração — usa as mesmas variáveis (cores,
+   tipografia) definidas em css/style.css, que é carregado antes deste. */
+
+body{ min-height:100vh; }
+
+/* .btn (and a couple other classed elements) set their own `display`,
+   which otherwise wins the cascade tie against the UA [hidden] rule —
+   this keeps `hidden` actually hiding things. Toggle with el.hidden. */
+[hidden]{ display:none !important; }
+
+.admin{
+  max-width:1080px;
+  margin-inline:auto;
+  padding:clamp(20px,4vw,40px);
+}
+
+.admin__header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding-bottom:1.4em; margin-bottom:2em;
+  border-bottom:1px solid var(--line);
+}
+.admin__brand{
+  font-family:'Fraunces',serif; font-size:1.3rem; font-weight:600;
+}
+.admin__brand span{ color:var(--ink-faint); font-weight:400; font-size:1rem; }
+
+/* ---- login ---- */
+.admin__login{
+  min-height:70vh;
+  display:flex; align-items:center; justify-content:center;
+}
+.admin__login-card{
+  width:100%; max-width:380px;
+  border:1px solid var(--line);
+  background:var(--bg-card);
+  border-radius:4px;
+  padding:clamp(1.8em,5vw,2.6em);
+  display:flex; flex-direction:column; gap:1.1em;
+}
+.admin__login-card h1{ font-size:1.6rem; }
+.admin__login-card p{ font-size:.9rem; }
+
+.admin__error{
+  color:#e59a9a; font-size:.85rem; min-height:1.2em; margin:0;
+}
+
+/* ---- painel ---- */
+.admin__grid{
+  display:grid; gap:2.4rem;
+  grid-template-columns:1fr;
+}
+@media (min-width:880px){
+  .admin__grid{ grid-template-columns:.85fr 1.15fr; align-items:start; }
+}
+
+.admin__form{
+  border:1px solid var(--line);
+  background:var(--bg-card);
+  border-radius:4px;
+  padding:clamp(1.6em,4vw,2.2em);
+  display:flex; flex-direction:column; gap:1.1em;
+  position:sticky; top:20px;
+}
+.admin__form h2{ font-size:1.3rem; }
+.admin__form-actions{ display:flex; gap:1em; flex-wrap:wrap; align-items:center; }
+.admin__status{ font-size:.85rem; color:var(--gold-bright); min-height:1.2em; margin:0; }
+
+.admin__list-wrap h2{ font-size:1.3rem; margin-bottom:.4em; }
+.admin__hint{ font-size:.85rem; color:var(--ink-faint); max-width:52ch; margin-bottom:1.4em; }
+
+.admin__list{ display:flex; flex-direction:column; gap:.9em; }
+.admin__loading{ color:var(--ink-faint); font-size:.9rem; }
+.admin__empty{
+  border:1px dashed var(--line-strong); border-radius:4px;
+  padding:2em; text-align:center; color:var(--ink-faint); font-size:.9rem;
+}
+
+.admin__row{
+  display:flex; align-items:center; gap:1em;
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:1em 1.2em;
+  background:var(--bg-card);
+}
+.admin__row--past{ opacity:.55; }
+.admin__row-date{
+  font-family:'Fraunces',serif; font-weight:600; color:var(--gold-bright);
+  width:76px; flex-shrink:0; font-size:.95rem; line-height:1.3;
+}
+.admin__row-body{ flex:1; min-width:0; }
+.admin__row-local{ font-weight:600; font-size:.96rem; }
+.admin__row-meta{ font-size:.8rem; color:var(--ink-faint); margin-top:.15em; }
+.admin__row-tag{
+  font-size:.68rem; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--ink-faint); border:1px solid var(--line-strong);
+  border-radius:100px; padding:.2em .6em; margin-left:.5em;
+}
+.admin__row-actions{ display:flex; gap:.5em; flex-shrink:0; }
+.admin__row-actions button{
+  background:transparent; border:1px solid var(--line-strong); color:var(--ink-dim);
+  border-radius:3px; padding:.5em .8em; font-size:.78rem; cursor:pointer;
+  transition:border-color .2s ease, color .2s ease;
+}
+.admin__row-actions button:hover{ border-color:var(--gold); color:var(--gold-bright); }
+.admin__row-actions button.is-danger:hover{ border-color:#c0605f; color:#e59a9a; }
+
+@media (max-width:560px){
+  .admin__row{ flex-wrap:wrap; }
+  .admin__row-actions{ width:100%; margin-top:.6em; }
+}

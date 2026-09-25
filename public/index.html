@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paulo Mayer | Cantor para Shows e Eventos</title>
+<meta name="description" content="Paulo Mayer — cantor profissional para shows e eventos. Contrate para casamentos, festas particulares, eventos corporativos e apresentações ao vivo.">
+<meta name="theme-color" content="#0a0806">
+<link rel="canonical" href="/">
+
+<!-- Open Graph / compartilhamento (WhatsApp, Facebook, Instagram, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paulo Mayer | Cantor para Shows e Eventos">
+<meta property="og:description" content="Música, presença e emoção para o seu evento. Conheça o trabalho de Paulo Mayer e solicite um orçamento.">
+<meta property="og:image" content="/images/hero-portrait.webp">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0806'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%F0%9F%8E%A4%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+
+<!--
+  ================================================================
+  SITE — PAULO MAYER (cantor) — projeto para deploy no Cloudflare Pages
+  ================================================================
+  Referência principal: https://www.instagram.com/cantorpaulomayer/
+  Nenhuma informação específica do artista foi inventada. Pontos que
+  ainda precisam de conteúdo real (veja também o README.md):
+
+    1. WHATSAPP_NUMBER (em js/main.js) — trocar pelo número real,
+       formato 55DDDNÚMERO (ex.: 5551999999999).
+    2. Ficha do artista (seção "Sobre") — estilo musical, formatos
+       de evento, região de atuação, anos de carreira.
+    3. Texto de trajetória/diferenciais (seção "Sobre").
+    4. Formatos de evento atendidos (seção "O Show").
+    5. VIDEOS[] (em js/main.js) — título + link de embed (YouTube/
+       Instagram) de cada vídeo.
+    6. GALLERY[] (em js/main.js) — trocar os quadros por fotos reais
+       (basta trocar o bloco .media-frame por uma <img>).
+    7. Repertório / estilos musicais (seção "Repertório").
+    8. Outras redes sociais além do Instagram (rodapé e seção "Redes").
+    9. Depoimentos: a seção de prova social foi propositalmente omitida
+       — não existem depoimentos reais disponíveis ainda.
+   10. Agenda ("Próximos shows"): a lista pública é lida em tempo real
+       de /api/shows — administre-a pelo painel em /admin (veja o
+       README.md para configurar a senha e o KV).
+-->
+</head>
+<body>
+
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-fx cursor-fx--glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="cursor-fx cursor-fx--shadow" id="cursorShadow" aria-hidden="true"></div>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="draft-badge">
+  <b>Modo rascunho —</b> textos e imagens marcados como espaço reservado serão substituídos por conteúdo real do artista antes da publicação.
+</div>
+
+<header class="nav" id="topo">
+  <a class="nav__brand" href="#topo">Paulo Mayer</a>
+  <nav aria-label="Navegação principal">
+    <ul class="nav__links">
+      <li><a href="#topo">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#shows">Shows</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#videos">Vídeos</a></li>
+      <li><a href="#fotos">Fotos</a></li>
+      <li><a href="#repertorio">Repertório</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-primary nav__cta" href="#contrate">Contrate</a>
+  <button class="burger" id="burgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#topo">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#shows">Shows</a></li>
+    <li><a href="#agenda">Agenda</a></li>
+    <li><a href="#videos">Vídeos</a></li>
+    <li><a href="#fotos">Fotos</a></li>
+    <li><a href="#repertorio">Repertório</a></li>
+  </ul>
+  <a class="btn btn-primary btn-block" href="#contrate">Contrate para seu evento</a>
+</div>
+
+<main id="conteudo">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="hero__portrait">
+        <img src="images/hero-portrait.webp" alt="Paulo Mayer com violão, em composição artística com piano e notas musicais" width="1800" height="1665">
+    </div>
+    <div class="hero__beam" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <div class="hero__text">
+        <h1>Paulo Mayer</h1>
+        <p class="hero__sub">Música, presença e emoção para o seu evento.</p>
+        <div class="hero__ctas">
+          <a class="btn btn-primary" href="#contrate">Contrate para seu evento</a>
+          <a class="btn btn-ghost" href="#videos">Ver vídeos</a>
+        </div>
+        <a class="hero__insta" href="https://www.instagram.com/cantorpaulomayer/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1"/></svg>
+          @cantorpaulomayer
+        </a>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section id="sobre">
+    <div class="wrap">
+      <div class="sobre__grid">
+        <div class="reveal">
+          <div class="artist-photo">
+            <img src="images/sobre-retrato.webp" alt="Paulo Mayer se apresentando ao vivo com a banda, cantando e tocando baixo no palco" width="1400" height="1424">
+          </div>
+        </div>
+        <div class="sobre__text reveal">
+          <span class="eyebrow">Sobre</span>
+          <h2>Paulo Mayer</h2>
+          <p class="sobre__lead">Cantor profissional dedicado a levar música, presença de palco e emoção para eventos e apresentações ao vivo.</p>
+          <div class="ficha">
+            <div class="ficha__row"><span class="ficha__label">Estilo musical</span><span class="ficha__value">—</span></div>
+            <div class="ficha__row"><span class="ficha__label">Formatos de show</span><span class="ficha__value">—</span></div>
+            <div class="ficha__row"><span class="ficha__label">Região de atuação</span><span class="ficha__value">—</span></div>
+            <div class="ficha__row"><span class="ficha__label">Anos de carreira</span><span class="ficha__value">—</span></div>
+            <p class="ficha__note">Ficha em atualização — dados serão adicionados conforme informações confirmadas do artista.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O SHOW ============ -->
+  <section class="show" id="shows">
+    <div class="wrap">
+      <div class="show__grid">
+        <div class="reveal">
+          <span class="eyebrow">A experiência</span>
+          <h2 style="margin-top:.5em">Mais do que um show.<br>Uma experiência.</h2>
+          <p class="lead" style="margin-top:1.1em">Cada apresentação é pensada para o momento do evento — do primeiro acorde ao encerramento. Contrate Paulo Mayer para dar à sua celebração uma trilha sonora à altura.</p>
+          <div class="chip-row" role="list" aria-label="Formatos de evento atendidos, a confirmar">
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Formato de evento</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Formato de evento</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Formato de evento</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Formato de evento</span>
+          </div>
+        </div>
+        <div class="show__panel reveal">
+          <div class="show__panel-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            <div><strong>Repertório sob medida</strong><span>Ajustado ao público e ao clima do evento.</span></div>
+          </div>
+          <div class="show__panel-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M4 6l8-4 8 4M4 18l8 4 8-4"/></svg>
+            <div><strong>Estrutura profissional</strong><span>Apresentação pensada do início ao fim, sem improviso.</span></div>
+          </div>
+          <div class="show__panel-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <div><strong>Contratação direta</strong><span>Alinhamento rápido de disponibilidade e condições.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AGENDA ============ -->
+  <section id="agenda">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Agenda</span>
+        <h2>Próximos shows</h2>
+        <p>Datas confirmadas de apresentações públicas. Para eventos particulares, use o formulário de contratação.</p>
+      </div>
+      <div id="agendaList" class="agenda__list" aria-live="polite">
+        <p class="agenda__loading">Carregando agenda...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIDEOS ============ -->
+  <section id="videos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Ao vivo</span>
+        <h2>Veja Paulo Mayer ao vivo</h2>
+        <p>Vídeos de apresentações serão adicionados aqui conforme forem disponibilizados.</p>
+      </div>
+      <div class="video-grid" id="videoGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ GALERIA ============ -->
+  <section id="fotos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Bastidores</span>
+        <h2>Galeria</h2>
+        <p>Fotos reais de shows, palco e bastidores serão adicionadas em breve.</p>
+      </div>
+      <div class="gallery" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ REPERTORIO ============ -->
+  <section id="repertorio">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Repertório</span>
+        <h2>Estilos e repertório</h2>
+      </div>
+      <div class="repertorio__box reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="width:30px;height:30px;color:var(--gold)"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        <p style="max-width:48ch">O repertório completo está sendo organizado e será publicado em breve, com os estilos musicais e músicas que fazem parte do show de Paulo Mayer.</p>
+        <div class="chip-row">
+          <span class="chip">Estilo musical</span>
+          <span class="chip">Estilo musical</span>
+          <span class="chip">Estilo musical</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REDES ============ -->
+  <section id="redes">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Redes</span>
+        <h2>Acompanhe Paulo Mayer</h2>
+      </div>
+      <div class="redes__grid">
+        <a class="social-card social-card--main reveal" href="https://www.instagram.com/cantorpaulomayer/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1"/></svg>
+          <strong>@cantorpaulomayer</strong>
+          <span>Instagram oficial — fotos, vídeos e bastidores</span>
+        </a>
+        <div class="social-card social-card--empty reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+          <span>Adicionar rede social</span>
+        </div>
+        <div class="social-card social-card--empty reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+          <span>Adicionar plataforma musical</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTATO ============ -->
+  <section class="contato" id="contrate">
+    <div class="wrap">
+      <div class="contato__grid">
+        <div class="contato__side reveal">
+          <span class="eyebrow">Contratação</span>
+          <h2 style="font-size:clamp(1.9rem,4vw,2.7rem)">Vamos levar o Paulo Mayer para o seu evento?</h2>
+          <p>Preencha o formulário com os detalhes do seu evento e receba um retorno sobre disponibilidade e condições de contratação.</p>
+          <div class="contato__direct">
+            <a href="#" id="waDirectLink" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.5 8.5 0 1 1-3.8-7.1L21 3l-1 3.6a8.46 8.46 0 0 1 1 4.9Z"/><path d="M8 10.5s.5 2 2 3.5 3.5 2 3.5 2"/></svg>
+              Falar pelo WhatsApp
+            </a>
+            <a href="https://www.instagram.com/cantorpaulomayer/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1"/></svg>
+              @cantorpaulomayer
+            </a>
+          </div>
+        </div>
+
+        <form id="bookingForm" class="reveal" novalidate>
+          <div class="field">
+            <label for="f-nome">Nome</label>
+            <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-whats">WhatsApp</label>
+            <input id="f-whats" name="whatsapp" type="tel" autocomplete="tel" placeholder="(00) 00000-0000" required>
+          </div>
+          <div class="field">
+            <label for="f-email">E-mail</label>
+            <input id="f-email" name="email" type="email" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="f-tipo">Tipo de evento</label>
+            <select id="f-tipo" name="tipo">
+              <option value="">Selecione</option>
+              <option>Casamento</option>
+              <option>Festa particular</option>
+              <option>Evento corporativo</option>
+              <option>Casa noturna / bar</option>
+              <option>Formatura</option>
+              <option>Evento público</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-cidade">Cidade</label>
+            <input id="f-cidade" name="cidade" type="text">
+          </div>
+          <div class="field">
+            <label for="f-data">Data do evento</label>
+            <input id="f-data" name="data" type="date">
+          </div>
+          <div class="field field--full">
+            <label for="f-convidados">Número aproximado de convidados</label>
+            <input id="f-convidados" name="convidados" type="number" min="0" inputmode="numeric">
+          </div>
+          <div class="field field--full">
+            <label for="f-msg">Mensagem</label>
+            <textarea id="f-msg" name="mensagem" placeholder="Conte um pouco mais sobre o evento"></textarea>
+          </div>
+          <div class="form__actions field--full">
+            <button type="submit" class="btn btn-primary">Solicitar orçamento</button>
+            <span class="form__status" id="formStatus" role="status" aria-live="polite"></span>
+          </div>
+          <p class="form__note">Ao enviar, o WhatsApp abrirá com sua solicitação já preenchida.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <h3>Paulo Mayer</h3>
+        <p>Cantor</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Navegação</h4>
+          <a href="#sobre">Sobre</a>
+          <a href="#shows">Shows</a>
+          <a href="#videos">Vídeos</a>
+          <a href="#fotos">Fotos</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <a href="#" id="waFooterLink" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.instagram.com/cantorpaulomayer/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> Paulo Mayer — Todos os direitos reservados.</span>
+      <span>Site em desenvolvimento</span>
+    </div>
+  </div>
+</footer>
+
+<button class="wa-float" id="waFloat" aria-label="Falar com Paulo Mayer pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.5 8.5 0 1 1-3.8-7.1L21 3l-1 3.6a8.46 8.46 0 0 1 1 4.9Z"/><path d="M8 10.5s.5 2 2 3.5 3.5 2 3.5 2"/></svg>
+</button>
+
+<!-- Lightbox (galeria) -->
+<div class="overlay lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de foto">
+  <div class="overlay__box">
+    <button class="overlay__close" id="lightboxClose" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <button class="overlay__nav overlay__prev" id="lightboxPrev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="overlay__nav overlay__next" id="lightboxNext" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div id="lightboxContent"></div>
+    <p class="lightbox__caption" id="lightboxCaption"></p>
+  </div>
+</div>
+
+<!-- Modal (video) -->
+<div class="overlay" id="videoModal" role="dialog" aria-modal="true" aria-label="Reprodução de vídeo">
+  <div class="overlay__box">
+    <button class="overlay__close" id="videoModalClose" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <div id="videoModalContent"></div>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+
+</body>
+</html>

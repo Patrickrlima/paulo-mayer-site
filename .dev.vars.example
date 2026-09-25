@@ -1,0 +1,5 @@
+# Copie este arquivo para ".dev.vars" (mesma pasta) pra testar o painel
+# localmente com `wrangler pages dev`. O ".dev.vars" real NUNCA deve ir
+# pro Git nem ser compartilhado — ele já está no .gitignore.
+ADMIN_PASSWORD=escolha_uma_senha_de_teste
+SESSION_SECRET=qualquer_string_longa_e_aleatoria_aqui

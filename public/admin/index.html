@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel — Paulo Mayer</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0806'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%F0%9F%8E%A4%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin">
+  <header class="admin__header">
+    <div class="admin__brand">Paulo Mayer <span>— painel</span></div>
+    <button type="button" class="btn btn-ghost" id="logoutBtn" hidden>Sair</button>
+  </header>
+
+  <!-- ===== TELA DE LOGIN ===== -->
+  <section id="loginScreen" class="admin__login">
+    <form id="loginForm" class="admin__login-card">
+      <h1>Entrar no painel</h1>
+      <p>Digite a senha de administração para gerenciar a agenda de shows.</p>
+      <div class="field">
+        <label for="loginPassword">Senha</label>
+        <input id="loginPassword" name="password" type="password" autocomplete="current-password" required autofocus>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+      <p class="admin__error" id="loginError" role="alert"></p>
+    </form>
+  </section>
+
+  <!-- ===== PAINEL (após login) ===== -->
+  <section id="panelScreen" class="admin__panel" hidden>
+    <div class="admin__grid">
+      <form id="showForm" class="admin__form">
+        <h2 id="formTitle">Novo show</h2>
+        <input type="hidden" id="showId" name="id">
+
+        <div class="field">
+          <label for="showData">Data</label>
+          <input id="showData" name="data" type="date" required>
+        </div>
+        <div class="field">
+          <label for="showHorario">Horário</label>
+          <input id="showHorario" name="horario" type="time">
+        </div>
+        <div class="field">
+          <label for="showLocal">Local</label>
+          <input id="showLocal" name="local" type="text" placeholder="Nome da casa/local" required>
+        </div>
+        <div class="field">
+          <label for="showCidade">Cidade</label>
+          <input id="showCidade" name="cidade" type="text" placeholder="Cidade — UF">
+        </div>
+        <div class="field">
+          <label for="showLink">Link de ingressos (opcional)</label>
+          <input id="showLink" name="linkIngresso" type="url" placeholder="https://...">
+        </div>
+        <div class="field">
+          <label for="showObs">Observação (opcional, uso interno)</label>
+          <textarea id="showObs" name="observacao" rows="2"></textarea>
+        </div>
+
+        <div class="admin__form-actions">
+          <button type="submit" class="btn btn-primary" id="submitBtn">Salvar show</button>
+          <button type="button" class="btn btn-ghost" id="cancelEditBtn" hidden>Cancelar edição</button>
+        </div>
+        <p class="admin__status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="admin__list-wrap">
+        <h2>Shows cadastrados</h2>
+        <p class="admin__hint">Datas passadas ficam marcadas como "passado" — apague quando quiser limpar a lista. A agenda pública do site mostra só as datas futuras.</p>
+        <div id="showsList" class="admin__list">
+          <p class="admin__loading">Carregando...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="admin.js" defer></script>
+</body>
+</html>
