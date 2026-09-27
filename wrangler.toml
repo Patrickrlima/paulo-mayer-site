@@ -1,13 +1,12 @@
-name = "paulo-mayer"
-pages_build_output_dir = "public"
+name = "paulo-mayer-site"
+main = "src/index.js"
 compatibility_date = "2026-09-01"
 
-# Vínculo do KV usado pela agenda de shows (functions/_lib/store.js).
-# Se for rodar `wrangler pages dev` localmente, troque "id" pelo id real
-# do namespace (crie um com `wrangler kv namespace create SHOWS_KV`).
-# Pelo dashboard (recomendado para produção), o binding é configurado em
-# Settings → Functions → KV namespace bindings — não precisa mexer aqui
-# pra isso funcionar em produção, só pra rodar localmente.
+[assets]
+directory = "public"
+binding = "ASSETS"
+
+# Vínculo do KV usado pela agenda de shows (src/lib/store.js).
 [[kv_namespaces]]
 binding = "SHOWS_KV"
-id = "coloque_aqui_o_id_do_namespace_para_dev_local"
+id = "f0592f3773ad487d8098668fa9524372"
