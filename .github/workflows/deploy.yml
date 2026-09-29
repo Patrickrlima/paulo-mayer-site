@@ -38,6 +38,11 @@ jobs:
           [ "$(echo "$verify" | jq -r .result.status)" = "active" ] \
             || fail "O token é inválido, expirou ou foi desativado. Crie um novo com o modelo 'Edit Cloudflare Workers'."
 
+          # Se o ID abaixo aparecer como *** o segredo CLOUDFLARE_ACCOUNT_ID
+          # está certo (o GitHub mascara valores iguais a segredos).
+          echo "Contas que o token enxerga:"
+          api /accounts | jq -r '.result[]? | "  - \(.name): \(.id)"'
+
           scripts=$(api "/accounts/$CF_ACCOUNT/workers/scripts")
           echo "Acesso a Workers: $(echo "$scripts" | jq -c '{success, errors}')"
           [ "$(echo "$scripts" | jq -r .success)" = "true" ] \
