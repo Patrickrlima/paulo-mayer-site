@@ -134,8 +134,6 @@ seguem valendo (procure pelos comentários `<!-- ... -->` no topo de
 `public/index.html` pra achar cada uma no código):
 
 - Número de WhatsApp real (`public/js/main.js`, `WHATSAPP_NUMBER`)
-- Ficha do artista e texto de trajetória (seção "Sobre")
-- Formatos de evento atendidos (seção "O Show")
 - Vídeos reais (`VIDEOS[]` em `public/js/main.js`)
 - Fotos da galeria (`GALLERY[]` em `public/js/main.js`)
 - Repertório/estilos musicais
